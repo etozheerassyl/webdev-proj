@@ -1,0 +1,102 @@
+.settings-page {
+  background: linear-gradient(135deg, #E4D1B9, #F1D9C6);  // Бежево-розовый градиент, как и на других страницах
+  min-height: 100vh;
+  padding: 2rem 0;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col-md-6 {
+    background: rgba(255, 255, 255, 0.9);  // Легкий белый фон для формы
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    .form-control {
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 1px solid #e2e8f0;
+      background-color: #f7fafc;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #38a169;  // Зеленая граница при фокусе
+        outline: none;
+      }
+    }
+  }
+
+  button {
+    background-color: #38a169;  // Зеленая кнопка
+    color: white;
+    border-radius: 20px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #2f8b5b;  // Темный зеленый оттенок при наведении
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn-outline-danger {
+    background-color: white;
+    color: #e53e3e;
+    border-radius: 20px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: 1px solid #e53e3e;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: #e53e3e;
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .success-messages {
+    background-color: #38a169;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .app-error-message {
+    margin-top: 0.5rem;
+    color: #e53e3e;
+    font-size: 0.875rem;
+  }
+}
