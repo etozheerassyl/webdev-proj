@@ -4,11 +4,11 @@
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center">Your Settings</h1>
 
-        @if (displaySuccessMessage() && mainForm.pristine) {
+        <div *ngIf="displaySuccessMessage() && mainForm.pristine">
           <ul class="success-messages">
             <li>Updated successfully!</li>
           </ul>
-        }
+        </div>
 
         <app-error-message [errors]="errors()"></app-error-message>
 
@@ -24,9 +24,9 @@
             </fieldset>
             <fieldset class="form-group">
               <textarea formControlName="bio"
-                class="form-control form-control-lg"
-                rows="8"
-                placeholder="Short bio about you"
+                        class="form-control form-control-lg"
+                        rows="8"
+                        placeholder="Short bio about you"
               ></textarea>
               <app-error-message [form]="mainForm.controls.bio"></app-error-message>
             </fieldset>
@@ -36,9 +36,9 @@
             </fieldset>
             <fieldset class="form-group">
               <input formControlName="password"
-                class="form-control form-control-lg"
-                type="password"
-                placeholder="New Password"
+                     class="form-control form-control-lg"
+                     type="password"
+                     placeholder="New Password"
               />
             </fieldset>
             <app-error-message [form]="mainForm.controls.password"></app-error-message>
@@ -46,7 +46,9 @@
             <button [disabled]="!mainForm.valid" (click)="updateProfile()" class="btn btn-lg btn-primary pull-xs-right">Update Settings</button>
           </fieldset>
         </form>
+
         <hr />
+
         <button (click)="logout()" class="btn btn-outline-danger">Or click here to logout.</button>
       </div>
     </div>
