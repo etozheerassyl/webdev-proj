@@ -1,55 +1,105 @@
-<div class="auth-page">
-  <div class="background-decor"></div>
-  <div class="container page">
-    <div class="row justify-content-center align-items-center min-vh-100">
-      <div class="col-md-7 d-none d-md-block">
-        <div class="welcome-side text-center">
-          <img src="assets/logo.svg" alt="logo" class="logo mb-4" />
-          <h2>Welcome back to KBTUklassniki!</h2>
-          <p class="lead">Join conversations, share your voice, and stay inspired.</p>
-        </div>
-      </div>
+.auth-page {
+  position: relative;
+  padding: 2rem 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f8fd, #d6e4f0);
 
-      <div class="col-md-5 col-xs-12">
-        <div class="card p-5 shadow-lg glass-card">
-          <h1 class="text-center mb-4">Sign in</h1>
-          <p class="text-center mb-4">
-            <a routerLink="/register">Need an account?</a>
-          </p>
+  .background-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 30%, #c3ddfd 10%, transparent 30%),
+    radial-gradient(circle at 80% 70%, #f9d8d6 10%, transparent 30%);
+    opacity: 0.3;
+    z-index: 0;
+  }
 
-          <app-error-message [errors]="errors()"></app-error-message>
+  .container {
+    position: relative;
+    z-index: 2;
+  }
 
-          <form [formGroup]="mainForm">
-            <fieldset class="form-group mb-4">
-              <input
-                formControlName="email"
-                class="form-control"
-                type="text"
-                placeholder="📧 Email"
-              />
-              <app-error-message [form]="mainForm.controls.email"></app-error-message>
-            </fieldset>
+  .glass-card {
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    padding: 3rem 2rem; // 💡 Вот это ключевое
+  }
 
-            <fieldset class="form-group mb-4">
-              <input
-                formControlName="password"
-                class="form-control"
-                type="password"
-                placeholder="🔒 Password"
-              />
-              <app-error-message [form]="mainForm.controls.password"></app-error-message>
-            </fieldset>
 
-            <button
-              [disabled]="!mainForm.valid"
-              (click)="login()"
-              class="btn btn-lg btn-primary w-100"
-            >
-              Sign in
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  h1 {
+      font-weight: 700;
+      color: #2d3748;
+    }
+
+    a {
+      color: #5cb85c;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    input.form-control {
+      border: 1px solid #d1d5db;
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      font-size: 1.1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: #a0aec0;
+        font-style: italic;
+      }
+
+      &:focus {
+        border-color: #5cb85c;
+        background-color: #fff;
+        box-shadow:
+          0 0 0 0.2rem rgba(92, 184, 92, 0.25),
+          inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        outline: none;
+      }
+    }
+
+    button {
+      background-color: #5cb85c;
+      border: none;
+      border-radius: 12px;
+      padding: 0.75rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #4cae4c;
+      }
+
+      &:disabled {
+        background-color: #a5d6a7;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .welcome-side {
+    padding: 2rem;
+
+    .logo {
+      width: 80px;
+    }
+
+    h2 {
+      font-weight: 600;
+      color: #1a202c;
+    }
+
+    p {
+      color: #4a5568;
+    }
+  }
+
