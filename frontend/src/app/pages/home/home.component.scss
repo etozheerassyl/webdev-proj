@@ -1,3 +1,74 @@
-.banner {
-    background-color: #1865FF;
+.home-page {
+  .banner {
+    background: linear-gradient(135deg, #E4D1B9, #F1D9C6);  // Бежево-розовый градиент
+    padding: 40px 0;
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    .logo-font {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+      background-color: #38a169;  // Зеленый фон для текста
+      padding: 20px 40px;  // Отступы вокруг текста
+      border-radius: 10px;  // Скругление углов
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Легкая тень
+      transition: transform 0.3s ease-in-out;  // Плавная анимация
+
+      &:hover {
+        transform: scale(1.05);  // Увеличение при наведении
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #4a5568;
+      margin-top: 10px;
+    }
+  }
+
+  .container.page {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;  // Немного отступа по бокам
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;  // Обеспечивает адаптивность
+
+    @media (max-width: 768px) {
+      flex-direction: column;  // На мобильных устройствах элементы будут в колонку
+      gap: 20px;
+    }
+  }
+
+  .main-feed {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);  // Легкий белый фон
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    flex: 2;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.02);  // Легкое увеличение карточки при наведении
+    }
+  }
+
+  .sidebar-container {
+    padding-top: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 350px;  // Ограничение ширины сайдбара
+
+    @media (max-width: 768px) {
+      max-width: 100%;  // На мобильных сайдбар будет шире
+    }
+  }
 }
