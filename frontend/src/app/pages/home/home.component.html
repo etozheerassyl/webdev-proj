@@ -8,21 +8,24 @@
 
   <div class="container page">
     <div class="row">
-      <div class="col-md-9">
+      <!-- Основная часть страницы -->
+      <div class="col-md-9 main-feed">
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
-            @for (feed of feedList(); track feed.name) {
-              <li class="nav-item">
-                <a class="nav-link" [ngClass]="{'active': feed.isActive}" (click)="setActiveFeed(feed)">{{feed.name}}</a>
-              </li>
-            }
+            <!-- Перебираем элементы feedList и отображаем их -->
+            <li class="nav-item" *ngFor="let feed of feedList(); trackBy: trackByFeed">
+              <a class="nav-link" [ngClass]="{'active': feed.isActive}" (click)="setActiveFeed(feed)">
+                {{feed.name}}
+              </a>
+            </li>
           </ul>
         </div>
 
         <app-articles-feed [feedMenuId]="activeFeed()?.id" [queryParams]="feedQueryParams()"></app-articles-feed>
       </div>
 
-      <div class="col-md-3">
+      <!-- Сайдбар -->
+      <div class="col-md-3 sidebar-container">
         <div class="sidebar">
           <app-article-tags (tagSelected)="setTagsFeed($event)"></app-article-tags>
         </div>
