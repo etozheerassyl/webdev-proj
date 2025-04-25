@@ -1,28 +1,54 @@
 <div class="auth-page">
+  <div class="background-decor"></div>
   <div class="container page">
-    <div class="row">
-      <div class="col-md-6 offset-md-3 col-xs-12">
-        <h1 class="text-xs-center">Sign in</h1>
-        <p class="text-xs-center">
-          <a routerLink="/register">Need an account?</a>
-        </p>
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-md-7 d-none d-md-block">
+        <div class="welcome-side text-center">
+          <img src="assets/logo.svg" alt="logo" class="logo mb-4" />
+          <h2>Welcome back to KBTUklassniki!</h2>
+          <p class="lead">Join conversations, share your voice, and stay inspired.</p>
+        </div>
+      </div>
 
-        <app-error-message [errors]="errors()"></app-error-message>
+      <div class="col-md-5 col-xs-12">
+        <div class="card p-5 shadow-lg glass-card">
+          <h1 class="text-center mb-4">Sign in</h1>
+          <p class="text-center mb-4">
+            <a routerLink="/register">Need an account?</a>
+          </p>
 
-        <form [formGroup]="mainForm">
-          <fieldset class="form-group">
-            <input formControlName="email" class="form-control form-control-lg" type="text" placeholder="Email" />
-            <app-error-message [form]="mainForm.controls.email"></app-error-message>
-          </fieldset>
+          <app-error-message [errors]="errors()"></app-error-message>
 
-          <fieldset class="form-group">
-            <input formControlName="password" class="form-control form-control-lg" type="password" placeholder="Password" />
-            <app-error-message [form]="mainForm.controls.password"></app-error-message>
-          </fieldset>
+          <form [formGroup]="mainForm">
+            <fieldset class="form-group mb-4">
+              <input
+                formControlName="email"
+                class="form-control"
+                type="text"
+                placeholder="📧 Email"
+              />
+              <app-error-message [form]="mainForm.controls.email"></app-error-message>
+            </fieldset>
 
-          <button [disabled]="!mainForm.valid" (click)="login()"
-                  class="btn btn-lg btn-primary pull-xs-right">Sign in</button>
-        </form>
+            <fieldset class="form-group mb-4">
+              <input
+                formControlName="password"
+                class="form-control"
+                type="password"
+                placeholder="🔒 Password"
+              />
+              <app-error-message [form]="mainForm.controls.password"></app-error-message>
+            </fieldset>
+
+            <button
+              [disabled]="!mainForm.valid"
+              (click)="login()"
+              class="btn btn-lg btn-primary w-100"
+            >
+              Sign in
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
